@@ -103,31 +103,25 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
     return (
       <DashGrid style={{ height: '48px' }} disbaleLinks={disbaleLinks} focus={true}>
         {!below600 && (
-          <DataText area="number" fontWeight="500">
+          <DataText area='number' fontWeight='500'>
             {index}
           </DataText>
         )}
-        <DataText area="name" fontWeight="500" justifyContent="flex-start">
+        <DataText area='name' fontWeight='500' justifyContent='flex-start'>
           <CustomLink style={{ marginLeft: below600 ? 0 : '1rem', whiteSpace: 'nowrap' }} to={'/account/' + lp.user.id}>
             {below800 ? lp.user.id.slice(0, 4) + '...' + lp.user.id.slice(38, 42) : lp.user.id}
           </CustomLink>
         </DataText>
 
-        {/* {!below1080 && (
-          <DataText area="type" justifyContent="flex-end">
-            {lp.type}
-          </DataText>
-        )} */}
-
         <DataText>
-          <CustomLink area="pair" to={'/pair/' + lp.pairAddress}>
+          <CustomLink area='pair' to={'/pair/' + lp.pairAddress}>
             <RowFixed>
               {!below600 && <DoubleTokenLogo a0={lp.token0} a1={lp.token1} size={16} margin={true} />}
               {lp.pairName}
             </RowFixed>
           </CustomLink>
         </DataText>
-        <DataText area="value">{formattedNum(lp.usd, true)}</DataText>
+        <DataText area='value'>{formattedNum(lp.usd, true)}</DataText>
       </DashGrid>
     )
   }
@@ -147,23 +141,18 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
     <ListWrapper>
       <DashGrid center={true} disbaleLinks={disbaleLinks} style={{ height: 'fit-content', padding: ' 0 0 1rem 0' }}>
         {!below600 && (
-          <Flex alignItems="center" justifyContent="flex-start">
-            <TYPE.main area="number">#</TYPE.main>
+          <Flex alignItems='center' justifyContent='flex-start'>
+            <TYPE.main area='number'>#</TYPE.main>
           </Flex>
         )}
-        <Flex alignItems="center" justifyContent="flex-start">
-          <TYPE.main area="name">Account</TYPE.main>
+        <Flex alignItems='center' justifyContent='flex-start'>
+          <TYPE.main area='name'>Account</TYPE.main>
         </Flex>
-        {/* {!below1080 && (
-          <Flex alignItems="center" justifyContent="flexEnd">
-            <TYPE.main area="type">Type</TYPE.main>
-          </Flex>
-        )} */}
-        <Flex alignItems="center" justifyContent="flexEnd">
-          <TYPE.main area="pair">Pair</TYPE.main>
+        <Flex alignItems='center' justifyContent='flexEnd'>
+          <TYPE.main area='pair'>Pair</TYPE.main>
         </Flex>
-        <Flex alignItems="center" justifyContent="flexEnd">
-          <TYPE.main area="value">Value</TYPE.main>
+        <Flex alignItems='center' justifyContent='flexEnd'>
+          <TYPE.main area='value'>Value</TYPE.main>
         </Flex>
       </DashGrid>
       <Divider />

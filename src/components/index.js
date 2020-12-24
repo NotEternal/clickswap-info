@@ -38,12 +38,11 @@ const Hint = ({ children, ...rest }) => (
 
 const Address = ({ address, token, ...rest }) => (
   <Link
-    color="button"
+    color='button'
     href={token ? urls.showToken(address) : urls.showAddress(address)}
     external
     style={{ wordBreak: 'break-all' }}
-    {...rest}
-  >
+    {...rest}>
     {address}
   </Link>
 )
