@@ -22,7 +22,6 @@ const Wrapper = styled.div`
   top: 0px;
   z-index: 9999;
   box-sizing: border-box;
-  /* background-color: #1b1c22; */
   background: linear-gradient(193.68deg, #1b1c22 0.68%, #000000 100.48%);
   color: ${({ theme }) => theme.bg2};
 
@@ -112,49 +111,46 @@ function SideNav({ history }) {
     <Wrapper isMobile={below1080}>
       {!below1080 ? (
         <DesktopWrapper>
-          <AutoColumn gap="1rem" style={{ marginLeft: '.75rem', marginTop: '1.5rem' }}>
+          <AutoColumn gap='1rem' style={{ marginLeft: '.75rem', marginTop: '1.5rem' }}>
             <Title />
             {!below1080 && (
-              <AutoColumn gap="1.25rem" style={{ marginTop: '1rem' }}>
-                <BasicLink to="/home">
+              <AutoColumn gap='1.25rem' style={{ marginTop: '1rem' }}>
+                <BasicLink to='/home'>
                   <Option activeText={history.location.pathname === '/home' ?? undefined}>
                     <TrendingUp size={20} style={{ marginRight: '.75rem' }} />
                     Overview
                   </Option>
                 </BasicLink>
-                <BasicLink to="/tokens">
+                <BasicLink to='/tokens'>
                   <Option
                     activeText={
                       (history.location.pathname.split('/')[1] === 'tokens' ||
                         history.location.pathname.split('/')[1] === 'token') ??
                       undefined
-                    }
-                  >
+                    }>
                     <Disc size={20} style={{ marginRight: '.75rem' }} />
                     Tokens
                   </Option>
                 </BasicLink>
-                <BasicLink to="/pairs">
+                <BasicLink to='/pairs'>
                   <Option
                     activeText={
                       (history.location.pathname.split('/')[1] === 'pairs' ||
                         history.location.pathname.split('/')[1] === 'pair') ??
                       undefined
-                    }
-                  >
+                    }>
                     <PieChart size={20} style={{ marginRight: '.75rem' }} />
                     Pairs
                   </Option>
                 </BasicLink>
 
-                <BasicLink to="/accounts">
+                <BasicLink to='/accounts'>
                   <Option
                     activeText={
                       (history.location.pathname.split('/')[1] === 'accounts' ||
                         history.location.pathname.split('/')[1] === 'account') ??
                       undefined
-                    }
-                  >
+                    }>
                     <List size={20} style={{ marginRight: '.75rem' }} />
                     Accounts
                   </Option>
@@ -162,38 +158,18 @@ function SideNav({ history }) {
               </AutoColumn>
             )}
           </AutoColumn>
-          <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
-            <HeaderText>
-              <Link href="https://uniswap.org" target="_blank">
-                Uniswap.org
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://v1.uniswap.info" target="_blank">
-                V1 Analytics
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://uniswap.org/docs/v2" target="_blank">
-                Docs
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://discord.com/invite/XErMcTq" target="_blank">
-                Discord
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://twitter.com/UniswapProtocol" target="_blank">
-                Twitter
-              </Link>
-            </HeaderText>
+          <AutoColumn gap='0.5rem' style={{ marginLeft: '.75rem', marginBottom: '3rem' }}>
             <Toggle isActive={isDark} toggle={toggleDarkMode} />
+            <HeaderText>
+              <Link href='https://clickswap.cloud' target='_blank'>
+                Clickswap.cloud
+              </Link>
+            </HeaderText>
           </AutoColumn>
           {!below1180 && (
             <Polling style={{ marginLeft: '.5rem' }}>
               <PollingDot />
-              <a href="/" style={{ color: 'white' }}>
+              <a href='/' style={{ color: 'white' }}>
                 <TYPE.small color={'white'}>
                   Updated {!!seconds ? seconds + 's' : '-'} ago <br />
                 </TYPE.small>

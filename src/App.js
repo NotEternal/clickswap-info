@@ -83,7 +83,7 @@ const LayoutWrapper = ({ children, savedOpen, setSavedOpen }) => {
     <>
       <ContentWrapper open={savedOpen}>
         <SideNav />
-        <Center id="center">{children}</Center>
+        <Center id='center'>{children}</Center>
         <Right open={savedOpen}>
           <PinnedData open={savedOpen} setSavedOpen={setSavedOpen} />
         </Right>
@@ -123,10 +123,10 @@ function App() {
               <Route
                 exacts
                 strict
-                path="/token/:tokenAddress"
+                path='/token/:tokenAddress'
                 render={({ match }) => {
                   if (OVERVIEW_TOKEN_BLACKLIST.includes(match.params.tokenAddress.toLowerCase())) {
-                    return <Redirect to="/home" />
+                    return <Redirect to='/home' />
                   }
                   if (isAddress(match.params.tokenAddress.toLowerCase())) {
                     return (
@@ -135,17 +135,17 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to='/home' />
                   }
                 }}
               />
               <Route
                 exacts
                 strict
-                path="/pair/:pairAddress"
+                path='/pair/:pairAddress'
                 render={({ match }) => {
                   if (PAIR_BLACKLIST.includes(match.params.pairAddress.toLowerCase())) {
-                    return <Redirect to="/home" />
+                    return <Redirect to='/home' />
                   }
                   if (isAddress(match.params.pairAddress.toLowerCase())) {
                     return (
@@ -154,14 +154,14 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to='/home' />
                   }
                 }}
               />
               <Route
                 exacts
                 strict
-                path="/account/:accountAddress"
+                path='/account/:accountAddress'
                 render={({ match }) => {
                   if (isAddress(match.params.accountAddress.toLowerCase())) {
                     return (
@@ -170,40 +170,40 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to='/home' />
                   }
                 }}
               />
 
-              <Route path="/home">
+              <Route path='/home'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <GlobalPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path="/tokens">
+              <Route path='/tokens'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AllTokensPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path="/pairs">
+              <Route path='/pairs'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AllPairsPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path="/accounts">
+              <Route path='/accounts'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AccountLookup />
                 </LayoutWrapper>
               </Route>
 
-              <Redirect to="/home" />
+              <Redirect to='/home' />
             </Switch>
           </BrowserRouter>
         ) : (
-          <LocalLoader fill="true" />
+          <LocalLoader fill='true' />
         )}
       </AppWrapper>
     </ApolloProvider>
