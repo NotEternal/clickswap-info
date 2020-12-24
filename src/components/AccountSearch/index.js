@@ -93,7 +93,7 @@ function AccountSearch({ history, small }) {
           <AutoRow>
             <Wrapper>
               <Input
-                placeholder="0x..."
+                placeholder='0x...'
                 onChange={(e) => {
                   setAccountValue(e.target.value)
                 }}
@@ -108,7 +108,7 @@ function AccountSearch({ history, small }) {
         {!small && (
           <Panel>
             <DashGrid center={true} style={{ height: 'fit-content', padding: '0 0 1rem 0' }}>
-              <TYPE.main area="account">Saved Accounts</TYPE.main>
+              <TYPE.main area='account'>Saved Accounts</TYPE.main>
             </DashGrid>
             <Divider />
             {savedAccounts?.length > 0 ? (
@@ -116,17 +116,15 @@ function AccountSearch({ history, small }) {
                 return (
                   <DashGrid key={account} center={true} style={{ height: 'fit-content', padding: '1rem 0 0 0' }}>
                     <Flex
-                      area="account"
-                      justifyContent="space-between"
-                      onClick={() => history.push('/account/' + account)}
-                    >
+                      area='account'
+                      justifyContent='space-between'
+                      onClick={() => history.push('/account/' + account)}>
                       <AccountLink>{account?.slice(0, 42)}</AccountLink>
                       <Hover
                         onClick={(e) => {
                           e.stopPropagation()
                           removeAccount(account)
-                        }}
-                      >
+                        }}>
                         <StyledIcon>
                           <X size={16} />
                         </StyledIcon>

@@ -36,7 +36,7 @@ export default function Toggle({ isActive, toggle }: ToggleProps) {
           <Sun size={20} />
         </IconWrapper>
       </span>
-      <span style={{ padding: '0 .5rem' }}>{' / '}</span>
+      <span style={{ padding: '0 .3rem' }}> </span>
       <span>
         <IconWrapper isActive={isActive}>
           <Moon size={20} />

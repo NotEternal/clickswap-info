@@ -45,8 +45,7 @@ export default function GlobalStats() {
               onMouseLeave={() => {
                 setShowPriceCard(false)
               }}
-              style={{ position: 'relative' }}
-            >
+              style={{ position: 'relative' }}>
               ETH Price: <Medium>{formattedEthPrice}</Medium>
               {showPriceCard && <UniPrice />}
             </TYPE.main>

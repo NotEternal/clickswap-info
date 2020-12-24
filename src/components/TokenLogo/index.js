@@ -64,7 +64,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px',
           }}
-          alt=""
+          alt=''
         />
       </StyledEthereumLogo>
     )

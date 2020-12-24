@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   top: 0px;
   z-index: 9999;
   box-sizing: border-box;
-  background: #050505;
+  background: #080808;
   color: ${({ theme }) => theme.bg2};
 
   @media screen and (max-width: 800px) {
@@ -159,12 +159,12 @@ function SideNav({ history }) {
             )}
           </AutoColumn>
           <AutoColumn gap='0.5rem' style={{ marginLeft: '.75rem', marginBottom: '3rem' }}>
-            <Toggle isActive={isDark} toggle={toggleDarkMode} />
             <HeaderText>
               <Link href='https://clickswap.cloud' target='_blank'>
-                clickswap.cloud
+                Clickswap.cloud
               </Link>
             </HeaderText>
+            <Toggle isActive={isDark} toggle={toggleDarkMode} />
           </AutoColumn>
           {!below1180 && (
             <Polling style={{ marginLeft: '.5rem' }}>

@@ -212,25 +212,23 @@ function PairPage({ pairAddress, history }) {
       <ContentWrapperLarge>
         <RowBetween>
           <TYPE.body>
-            <BasicLink to="/pairs">{'Pairs '}</BasicLink>→ {token0?.symbol}-{token1?.symbol}
+            <BasicLink to='/pairs'>{'Pairs '}</BasicLink>→ {token0?.symbol}-{token1?.symbol}
           </TYPE.body>
           {!below600 && <Search small={true} />}
         </RowBetween>
         <WarningGrouping
           disabled={
             !dismissed && listedTokens && !(listedTokens.includes(token0?.id) && listedTokens.includes(token1?.id))
-          }
-        >
+          }>
           <DashboardWrapper>
-            <AutoColumn gap="40px" style={{ marginBottom: '1.5rem' }}>
+            <AutoColumn gap='40px' style={{ marginBottom: '1.5rem' }}>
               <div
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
                   width: '100%',
-                }}
-              >
+                }}>
                 <RowFixed style={{ flexWrap: 'wrap', minWidth: '100px' }}>
                   <RowFixed>
                     {token0 && token1 && (
@@ -257,8 +255,7 @@ function PairPage({ pairAddress, history }) {
                   mt={below1080 && '1rem'}
                   style={{
                     flexDirection: below1080 ? 'row-reverse' : 'initial',
-                  }}
-                >
+                  }}>
                   {!!!savedPairs[pairAddress] && !below1080 ? (
                     <Hover onClick={() => addPair(pairAddress, token0.id, token1.id, token0.symbol, token1.symbol)}>
                       <StyledIcon>
@@ -285,14 +282,13 @@ function PairPage({ pairAddress, history }) {
               </div>
             </AutoColumn>
             <AutoRow
-              gap="6px"
+              gap='6px'
               style={{
                 width: 'fit-content',
                 marginTop: below900 ? '1rem' : '0',
                 marginBottom: below900 ? '0' : '2rem',
                 flexWrap: 'wrap',
-              }}
-            >
+              }}>
               <FixedPanel onClick={() => history.push(`/token/${token0?.id}`)}>
                 <RowFixed>
                   <TokenLogo address={token0?.id} size={'16px'} />
@@ -322,12 +318,12 @@ function PairPage({ pairAddress, history }) {
               {!below1080 && <TYPE.main fontSize={'1.125rem'}>Pair Stats</TYPE.main>}
               <PanelWrapper style={{ marginTop: '1.5rem' }}>
                 <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
+                  <AutoColumn gap='20px'>
                     <RowBetween>
                       <TYPE.main>Total Liquidity {!usingTracked ? '(Untracked)' : ''}</TYPE.main>
                       <div />
                     </RowBetween>
-                    <RowBetween align="flex-end">
+                    <RowBetween align='flex-end'>
                       <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
                         {liquidity}
                       </TYPE.main>
@@ -336,12 +332,12 @@ function PairPage({ pairAddress, history }) {
                   </AutoColumn>
                 </Panel>
                 <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
+                  <AutoColumn gap='20px'>
                     <RowBetween>
                       <TYPE.main>Volume (24hrs) {usingUtVolume && '(Untracked)'}</TYPE.main>
                       <div />
                     </RowBetween>
-                    <RowBetween align="flex-end">
+                    <RowBetween align='flex-end'>
                       <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
                         {volume}
                       </TYPE.main>
@@ -350,12 +346,12 @@ function PairPage({ pairAddress, history }) {
                   </AutoColumn>
                 </Panel>
                 <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
+                  <AutoColumn gap='20px'>
                     <RowBetween>
                       <TYPE.main>Fees (24hrs)</TYPE.main>
                       <div />
                     </RowBetween>
-                    <RowBetween align="flex-end">
+                    <RowBetween align='flex-end'>
                       <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
                         {fees}
                       </TYPE.main>
@@ -365,13 +361,13 @@ function PairPage({ pairAddress, history }) {
                 </Panel>
 
                 <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
+                  <AutoColumn gap='20px'>
                     <RowBetween>
                       <TYPE.main>Pooled Tokens</TYPE.main>
                       <div />
                     </RowBetween>
                     <Hover onClick={() => history.push(`/token/${token0?.id}`)} fade={true}>
-                      <AutoRow gap="4px">
+                      <AutoRow gap='4px'>
                         <TokenLogo address={token0?.id} />
                         <TYPE.main fontSize={20} lineHeight={1} fontWeight={500}>
                           <RowFixed>
@@ -382,7 +378,7 @@ function PairPage({ pairAddress, history }) {
                       </AutoRow>
                     </Hover>
                     <Hover onClick={() => history.push(`/token/${token1?.id}`)} fade={true}>
-                      <AutoRow gap="4px">
+                      <AutoRow gap='4px'>
                         <TokenLogo address={token1?.id} />
                         <TYPE.main fontSize={20} lineHeight={1} fontWeight={500}>
                           <RowFixed>
@@ -398,8 +394,7 @@ function PairPage({ pairAddress, history }) {
                   style={{
                     gridColumn: below1080 ? '1' : '2/4',
                     gridRow: below1080 ? '' : '1/5',
-                  }}
-                >
+                  }}>
                   <PairChart
                     address={pairAddress}
                     color={backgroundColor}
@@ -414,8 +409,7 @@ function PairPage({ pairAddress, history }) {
               <Panel
                 style={{
                   marginTop: '1.5rem',
-                }}
-              >
+                }}>
                 {transactions ? <TxnList transactions={transactions} /> : <Loader />}
               </Panel>
               <RowBetween style={{ marginTop: '3rem' }}>
@@ -426,8 +420,7 @@ function PairPage({ pairAddress, history }) {
                 style={{
                   marginTop: '1.5rem',
                 }}
-                p={20}
-              >
+                p={20}>
                 <TokenDetailsLayout>
                   <Column>
                     <TYPE.main>Pair Name</TYPE.main>
@@ -441,7 +434,7 @@ function PairPage({ pairAddress, history }) {
                   </Column>
                   <Column>
                     <TYPE.main>Pair Address</TYPE.main>
-                    <AutoRow align="flex-end">
+                    <AutoRow align='flex-end'>
                       <TYPE.main style={{ marginTop: '.5rem' }}>
                         {pairAddress.slice(0, 6) + '...' + pairAddress.slice(38, 42)}
                       </TYPE.main>
@@ -455,7 +448,7 @@ function PairPage({ pairAddress, history }) {
                         <span style={{ marginLeft: '4px' }}>Address</span>
                       </RowFixed>
                     </TYPE.main>
-                    <AutoRow align="flex-end">
+                    <AutoRow align='flex-end'>
                       <TYPE.main style={{ marginTop: '.5rem' }}>
                         {token0 && token0.id.slice(0, 6) + '...' + token0.id.slice(38, 42)}
                       </TYPE.main>
@@ -469,7 +462,7 @@ function PairPage({ pairAddress, history }) {
                         <span style={{ marginLeft: '4px' }}>Address</span>
                       </RowFixed>
                     </TYPE.main>
-                    <AutoRow align="flex-end">
+                    <AutoRow align='flex-end'>
                       <TYPE.main style={{ marginTop: '.5rem' }} fontSize={16}>
                         {token1 && token1.id.slice(0, 6) + '...' + token1.id.slice(38, 42)}
                       </TYPE.main>
