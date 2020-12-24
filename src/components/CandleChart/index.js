@@ -190,7 +190,7 @@ const CandleStickChart = ({
 
   return (
     <div>
-      <div ref={ref} id="test-id" />
+      <div ref={ref} id='test-id' />
       <IconWrapper>
         <Play
           onClick={() => {
