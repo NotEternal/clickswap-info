@@ -65,11 +65,11 @@ function GlobalPage() {
 
   return (
     <PageWrapper>
-      <ThemedBackground backgroundColor={transparentize(0.8, '#ff007a')} />
+      <ThemedBackground backgroundColor={transparentize(0.8, '#7b68ee')} />
       <ContentWrapper>
         <div>
-          <AutoColumn gap="24px" style={{ paddingBottom: below800 ? '0' : '24px' }}>
-            <TYPE.largeHeader>Clickswap Analytics</TYPE.largeHeader>
+          <AutoColumn gap='24px' style={{ paddingBottom: below800 ? '0' : '24px' }}>
+            <TYPE.largeHeader>Analytics</TYPE.largeHeader>
             <Search />
             <GlobalStats />
           </AutoColumn>
@@ -77,25 +77,25 @@ function GlobalPage() {
             <Box mb={20}>
               <Panel>
                 <Box>
-                  <AutoColumn gap="36px">
-                    <AutoColumn gap="20px">
+                  <AutoColumn gap='36px'>
+                    <AutoColumn gap='20px'>
                       <RowBetween>
                         <TYPE.main>Volume (24hrs)</TYPE.main>
                         <div />
                       </RowBetween>
-                      <RowBetween align="flex-end">
+                      <RowBetween align='flex-end'>
                         <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={600}>
                           {formattedNum(oneDayVolumeUSD, true)}
                         </TYPE.main>
                         <TYPE.main fontSize={12}>{formattedPercent(volumeChangeUSD)}</TYPE.main>
                       </RowBetween>
                     </AutoColumn>
-                    <AutoColumn gap="20px">
+                    <AutoColumn gap='20px'>
                       <RowBetween>
                         <TYPE.main>Total Liquidity</TYPE.main>
                         <div />
                       </RowBetween>
-                      <RowBetween align="flex-end">
+                      <RowBetween align='flex-end'>
                         <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={600}>
                           {formattedNum(totalLiquidityUSD, true)}
                         </TYPE.main>
@@ -110,21 +110,21 @@ function GlobalPage() {
           {!below800 && (
             <GridRow>
               <Panel style={{ height: '100%', minHeight: '300px' }}>
-                <GlobalChart display="liquidity" />
+                <GlobalChart display='liquidity' />
               </Panel>
               <Panel style={{ height: '100%' }}>
-                <GlobalChart display="volume" />
+                <GlobalChart display='volume' />
               </Panel>
             </GridRow>
           )}
           {below800 && (
-            <AutoColumn style={{ marginTop: '6px' }} gap="24px">
+            <AutoColumn style={{ marginTop: '6px' }} gap='24px'>
               <Panel style={{ height: '100%', minHeight: '300px' }}>
-                <GlobalChart display="liquidity" />
+                <GlobalChart display='liquidity' />
               </Panel>
             </AutoColumn>
           )}
-          <ListOptions gap="10px" style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
+          <ListOptions gap='10px' style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
             <RowBetween>
               <TYPE.main fontSize={'1.125rem'}>Top Tokens</TYPE.main>
               <CustomLink to={'/tokens'}>See All</CustomLink>
@@ -133,7 +133,7 @@ function GlobalPage() {
           <Panel style={{ marginTop: '6px', padding: '1.125rem 0 ' }}>
             <TopTokenList tokens={allTokens} />
           </Panel>
-          <ListOptions gap="10px" style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
+          <ListOptions gap='10px' style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
             <RowBetween>
               <TYPE.main fontSize={'1rem'}>Top Pairs</TYPE.main>
               <CustomLink to={'/pairs'}>See All</CustomLink>

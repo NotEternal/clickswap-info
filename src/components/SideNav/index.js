@@ -162,7 +162,7 @@ function SideNav({ history }) {
             <Toggle isActive={isDark} toggle={toggleDarkMode} />
             <HeaderText>
               <Link href='https://clickswap.cloud' target='_blank'>
-                Clickswap.cloud
+                clickswap.cloud
               </Link>
             </HeaderText>
           </AutoColumn>
