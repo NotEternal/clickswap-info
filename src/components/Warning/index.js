@@ -12,10 +12,10 @@ import { useMedia } from 'react-use'
 
 const WarningWrapper = styled.div`
   border-radius: 20px;
-  border: 1px solid #f82d3a;
-  background: rgba(248, 45, 58, 0.05);
+  border: 1px solid #ff6879;
+  background-image: linear-gradient(to right bottom, #d32e2e20, #d2413f20, #d0525020, #cd605f15, #c86e6e10);
   padding: 1rem;
-  color: #f82d3a;
+  color: #ff6879;
   display: ${({ show }) => !show && 'none'};
   margin: 0 2rem 2rem 2rem;
   position: relative;
@@ -57,7 +57,7 @@ export default function Warning({ type, show, setShow, address }) {
 
   return (
     <WarningWrapper show={show}>
-      <AutoColumn gap="4px">
+      <AutoColumn gap='4px'>
         <RowFixed>
           <StyledWarningIcon />
           <Text fontWeight={600} lineHeight={'145.23%'} ml={'10px'}>
@@ -71,16 +71,15 @@ export default function Warning({ type, show, setShow, address }) {
               <Link
                 fontWeight={500}
                 lineHeight={'145.23%'}
-                color={'#2172E5'}
+                color={'#5172E5'}
                 href={'https://etherscan.io/address/' + address}
-                target="_blank"
-              >
+                target='_blank'>
                 View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
               </Link>
             </Hover>
             <RowBetween style={{ marginTop: '20px' }}>
               <div />
-              <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
+              <ButtonDark color={'#FF6879'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
                 I understand
               </ButtonDark>
             </RowBetween>
@@ -93,12 +92,11 @@ export default function Warning({ type, show, setShow, address }) {
                 lineHeight={'145.23%'}
                 color={'#2172E5'}
                 href={'https://etherscan.io/address/' + address}
-                target="_blank"
-              >
+                target='_blank'>
                 View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
               </Link>
             </Hover>
-            <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
+            <ButtonDark color={'#D43912'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
               I understand
             </ButtonDark>
           </RowBetween>

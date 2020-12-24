@@ -144,7 +144,7 @@ const Gray = styled.span`
 `
 
 const Blue = styled.span`
-  color: #2172e5;
+  color: #5172e5;
   :hover {
     cursor: pointer;
   }
@@ -480,13 +480,11 @@ export const Search = ({ small = false }) => {
               )
             })}
           <Heading
-            hide={!(Object.keys(filteredPairList).length > 3 && Object.keys(filteredPairList).length >= pairsShown)}
-          >
+            hide={!(Object.keys(filteredPairList).length > 3 && Object.keys(filteredPairList).length >= pairsShown)}>
             <Blue
               onClick={() => {
                 setPairsShown(pairsShown + 5)
-              }}
-            >
+              }}>
               See more...
             </Blue>
           </Heading>
@@ -517,13 +515,11 @@ export const Search = ({ small = false }) => {
           })}
 
           <Heading
-            hide={!(Object.keys(filteredTokenList).length > 3 && Object.keys(filteredTokenList).length >= tokensShown)}
-          >
+            hide={!(Object.keys(filteredTokenList).length > 3 && Object.keys(filteredTokenList).length >= tokensShown)}>
             <Blue
               onClick={() => {
                 setTokensShown(tokensShown + 5)
-              }}
-            >
+              }}>
               See more...
             </Blue>
           </Heading>

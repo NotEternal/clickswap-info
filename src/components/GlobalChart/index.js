@@ -79,7 +79,7 @@ const GlobalChart = ({ display }) => {
   return chartDataFiltered ? (
     <>
       {below800 && (
-        <DropdownSelect options={CHART_VIEW} active={chartView} setActive={setChartView} color={'#ff007a'} />
+        <DropdownSelect options={CHART_VIEW} active={chartView} setActive={setChartView} color={'#655ece'} />
       )}
 
       {chartDataFiltered && chartView === CHART_VIEW.LIQUIDITY && (
@@ -88,8 +88,8 @@ const GlobalChart = ({ display }) => {
             data={dailyData}
             base={totalLiquidityUSD}
             baseChange={liquidityChangeUSD}
-            title="Liquidity"
-            field="totalLiquidityUSD"
+            title='Liquidity'
+            field='totalLiquidityUSD'
             width={width}
             type={CHART_TYPES.AREA}
           />
@@ -116,19 +116,16 @@ const GlobalChart = ({ display }) => {
             position: 'absolute',
             left: '20px',
             zIndex: 10,
-          }}
-        >
+          }}>
           <OptionButton
             active={volumeWindow === VOLUME_WINDOW.DAYS}
-            onClick={() => setVolumeWindow(VOLUME_WINDOW.DAYS)}
-          >
+            onClick={() => setVolumeWindow(VOLUME_WINDOW.DAYS)}>
             <TYPE.body>D</TYPE.body>
           </OptionButton>
           <OptionButton
             style={{ marginLeft: '4px' }}
             active={volumeWindow === VOLUME_WINDOW.WEEKLY}
-            onClick={() => setVolumeWindow(VOLUME_WINDOW.WEEKLY)}
-          >
+            onClick={() => setVolumeWindow(VOLUME_WINDOW.WEEKLY)}>
             <TYPE.body>W</TYPE.body>
           </OptionButton>
         </RowFixed>

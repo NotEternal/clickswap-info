@@ -21,7 +21,7 @@ const TitleWrapper = styled.div`
 const UniIcon = styled(Link)`
   transition: transform 0.3s ease;
   :hover {
-    transform: rotate(-5deg);
+    transform: translateY(0.2em);
   }
 `
 
@@ -30,12 +30,12 @@ export default function Title() {
 
   return (
     <TitleWrapper onClick={() => history.push('/')}>
-      <Flex alignItems="center">
+      <Flex alignItems='center'>
         <RowFixed>
-          <UniIcon id="link" onClick={() => history.push('/')}>
-            <img width={'24px'} src={Logo} alt="logo" />
+          <UniIcon id='link' onClick={() => history.push('/')}>
+            <img width={'32px'} src={Logo} alt='logo' />
           </UniIcon>
-          <img width={'84px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt="logo" />
+          <img width={'92px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt='logo' />
         </RowFixed>
       </Flex>
     </TitleWrapper>

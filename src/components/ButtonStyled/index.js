@@ -7,8 +7,8 @@ import { RowBetween } from '../Row'
 import { StyledIcon } from '..'
 
 const Base = styled(RebassButton)`
-  padding: 8px 12px;
-  font-size: 0.825rem;
+  padding: 13px 18px;
+  font-size: 0.88rem;
   font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
@@ -20,8 +20,8 @@ const Base = styled(RebassButton)`
 `
 
 const BaseCustom = styled(RebassButton)`
-  padding: 16px 12px;
-  font-size: 0.825rem;
+  padding: 13px 18px;
+  font-size: 0.88rem;
   font-weight: 400;
   border-radius: 12px;
   cursor: pointer;
@@ -60,20 +60,20 @@ const ContentWrapper = styled.div`
 `
 
 export const ButtonLight = styled(Base)`
-  background-color: ${({ color, theme }) => (color ? transparentize(0.9, color) : transparentize(0.9, theme.primary1))};
-  color: ${({ color, theme }) => (color ? darken(0.1, color) : theme.primary1)};
+  background-color: ${({ color, theme }) => (color ? transparentize(0.8, color) : transparentize(0.8, theme.link))};
+  color: ${({ color, theme }) => (color ? darken(0.4, color) : theme.link)};
 
   min-width: fit-content;
   border-radius: 12px;
   white-space: nowrap;
+  transition: 0.2s;
 
   a {
-    color: ${({ color, theme }) => (color ? darken(0.1, color) : theme.primary1)};
+    color: ${({ color, theme }) => (color ? darken(0.4, color) : theme.link)};
   }
 
   :hover {
-    background-color: ${({ color, theme }) =>
-      color ? transparentize(0.8, color) : transparentize(0.8, theme.primary1)};
+    background-color: ${({ color, theme }) => (color ? transparentize(0.6, color) : transparentize(0.6, theme.link))};
   }
 `
 
