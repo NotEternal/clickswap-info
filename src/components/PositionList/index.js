@@ -5,15 +5,15 @@ import LocalLoader from '../LocalLoader'
 import utc from 'dayjs/plugin/utc'
 import { Box, Flex, Text } from 'rebass'
 import styled from 'styled-components'
-import Link, { CustomLink } from '../Link'
+import { CustomLink } from '../Link' // Link
 import { Divider } from '../../components'
 import DoubleTokenLogo from '../DoubleLogo'
 import { withRouter } from 'react-router-dom'
-import { formattedNum, getPoolLink } from '../../utils'
+import { formattedNum } from '../../utils' // { getPoolLink }
 import { AutoColumn } from '../Column'
 import { useEthPrice } from '../../contexts/GlobalData'
 import { RowFixed } from '../Row'
-import { ButtonLight } from '../ButtonStyled'
+// import { ButtonLight } from '../ButtonStyled'
 import { TYPE } from '../../Theme'
 import FormattedName from '../FormattedName'
 
@@ -143,12 +143,12 @@ function PositionList({ positions }) {
 
     return (
       <DashGrid style={{ opacity: poolOwnership > 0 ? 1 : 0.6 }} focus={true}>
-        {!below740 && <DataText area="number">{index}</DataText>}
-        <DataText area="name" justifyContent="flex-start" alignItems="flex-start">
-          <AutoColumn gap="8px" justify="flex-start" align="flex-start">
+        {!below740 && <DataText area='number'>{index}</DataText>}
+        <DataText area='name' justifyContent='flex-start' alignItems='flex-start'>
+          <AutoColumn gap='8px' justify='flex-start' align='flex-start'>
             <DoubleTokenLogo size={16} a0={position.pair.token0.id} a1={position.pair.token1.id} margin={!below740} />
           </AutoColumn>
-          <AutoColumn gap="8px" justify="flex-start" style={{ marginLeft: '20px' }}>
+          <AutoColumn gap='8px' justify='flex-start' style={{ marginLeft: '20px' }}>
             <CustomLink to={'/pair/' + position.pair.id}>
               <TYPE.main style={{ whiteSpace: 'nowrap' }} to={'/pair/'}>
                 <FormattedName
@@ -157,7 +157,7 @@ function PositionList({ positions }) {
                 />
               </TYPE.main>
             </CustomLink>
-
+            {/* 
             <RowFixed gap="8px" justify="flex-start">
               <Link
                 external
@@ -171,13 +171,13 @@ function PositionList({ positions }) {
                   <ButtonLight style={{ padding: '4px 6px', borderRadius: '4px' }}>Remove</ButtonLight>
                 </Link>
               )}
-            </RowFixed>
+            </RowFixed> */}
           </AutoColumn>
         </DataText>
-        <DataText area="uniswap">
-          <AutoColumn gap="12px" justify="flex-end">
+        <DataText area='uniswap'>
+          <AutoColumn gap='12px' justify='flex-end'>
             <TYPE.main>{formattedNum(valueUSD, true, true)}</TYPE.main>
-            <AutoColumn gap="4px" justify="flex-end">
+            <AutoColumn gap='4px' justify='flex-end'>
               <RowFixed>
                 <TYPE.small fontWeight={400}>
                   {formattedNum(poolOwnership * parseFloat(position.pair.reserve0))}{' '}
@@ -204,12 +204,12 @@ function PositionList({ positions }) {
           </AutoColumn>
         </DataText>
         {!below500 && (
-          <DataText area="return">
-            <AutoColumn gap="12px" justify="flex-end">
+          <DataText area='return'>
+            <AutoColumn gap='12px' justify='flex-end'>
               <TYPE.main color={'green'}>
                 <RowFixed>{formattedNum(position?.fees.sum, true, true)}</RowFixed>
               </TYPE.main>
-              <AutoColumn gap="4px" justify="flex-end">
+              <AutoColumn gap='4px' justify='flex-end'>
                 <RowFixed>
                   <TYPE.small fontWeight={400}>
                     {parseFloat(position.pair.token0.derivedETH)
@@ -287,33 +287,31 @@ function PositionList({ positions }) {
     <ListWrapper>
       <DashGrid center={true} style={{ height: '32px', padding: 0 }}>
         {!below740 && (
-          <Flex alignItems="flex-start" justifyContent="flexStart">
-            <TYPE.main area="number">#</TYPE.main>
+          <Flex alignItems='flex-start' justifyContent='flexStart'>
+            <TYPE.main area='number'>#</TYPE.main>
           </Flex>
         )}
-        <Flex alignItems="flex-start" justifyContent="flex-start">
-          <TYPE.main area="number">Name</TYPE.main>
+        <Flex alignItems='flex-start' justifyContent='flex-start'>
+          <TYPE.main area='number'>Name</TYPE.main>
         </Flex>
-        <Flex alignItems="center" justifyContent="flexEnd">
+        <Flex alignItems='center' justifyContent='flexEnd'>
           <ClickableText
-            area="uniswap"
+            area='uniswap'
             onClick={(e) => {
               setSortedColumn(SORT_FIELD.VALUE)
               setSortDirection(sortedColumn !== SORT_FIELD.VALUE ? true : !sortDirection)
-            }}
-          >
+            }}>
             {below740 ? 'Value' : 'Liquidity'} {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
           </ClickableText>
         </Flex>
         {!below500 && (
-          <Flex alignItems="center" justifyContent="flexEnd">
+          <Flex alignItems='center' justifyContent='flexEnd'>
             <ClickableText
-              area="return"
+              area='return'
               onClick={() => {
                 setSortedColumn(SORT_FIELD.UNISWAP_RETURN)
                 setSortDirection(sortedColumn !== SORT_FIELD.UNISWAP_RETURN ? true : !sortDirection)
-              }}
-            >
+              }}>
               {below740 ? 'Fees' : 'Total Fees Earned'}{' '}
               {sortedColumn === SORT_FIELD.UNISWAP_RETURN ? (!sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
