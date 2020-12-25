@@ -121,7 +121,7 @@ function App() {
           <BrowserRouter>
             <Switch>
               <Route
-                exacts
+                exact
                 strict
                 path='/token/:tokenAddress'
                 render={({ match }) => {
@@ -140,7 +140,7 @@ function App() {
                 }}
               />
               <Route
-                exacts
+                exact
                 strict
                 path='/pair/:pairAddress'
                 render={({ match }) => {
@@ -159,7 +159,7 @@ function App() {
                 }}
               />
               <Route
-                exacts
+                exact
                 strict
                 path='/account/:accountAddress'
                 render={({ match }) => {

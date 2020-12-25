@@ -159,8 +159,7 @@ export default function Provider({ children }) {
           },
         ],
         [state, update, updateTimeframe, updateSessionStart, updateSupportedTokens, updateLatestBlock, updateHeadBlock]
-      )}
-    >
+      )}>
       {children}
     </ApplicationContext.Provider>
   )

@@ -185,8 +185,7 @@ export default function Provider({ children }) {
           },
         ],
         [state, update, updateTokenTxns, updateChartData, updateTopTokens, updateAllPairs, updatePriceData]
-      )}
-    >
+      )}>
       {children}
     </TokenDataContext.Provider>
   )

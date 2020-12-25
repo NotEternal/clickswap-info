@@ -175,8 +175,7 @@ export default function Provider({ children }) {
           },
         ],
         [state, update, updatePairTxns, updateChartData, updateTopPairs, updateHourlyData]
-      )}
-    >
+      )}>
       {children}
     </PairDataContext.Provider>
   )
