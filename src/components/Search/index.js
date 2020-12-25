@@ -209,8 +209,8 @@ export const Search = ({ small = false }) => {
           const foundTokens = tokens.data.asSymbol.concat(tokens.data.asAddress).concat(tokens.data.asName)
           setSearchedTokens(foundTokens)
         }
-      } catch (e) {
-        console.log(e)
+      } catch (error) {
+        console.error(error)
       }
     }
     fetchData()

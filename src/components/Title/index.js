@@ -33,9 +33,9 @@ export default function Title() {
       <Flex alignItems='center'>
         <RowFixed>
           <UniIcon id='link' onClick={() => history.push('/')}>
-            <img width={'32px'} src={Logo} alt='logo' />
+            <img width={'24px'} src={Logo} alt='logo' />
           </UniIcon>
-          <img width={'92px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt='logo' />
+          <img width={'82px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt='logo' />
         </RowFixed>
       </Flex>
     </TitleWrapper>
