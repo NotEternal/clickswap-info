@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { ApolloProvider } from 'react-apollo'
 import { client } from './apollo/client'
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom'
+import { Route, Switch, HashRouter, Redirect } from 'react-router-dom'
 import GlobalPage from './pages/GlobalPage'
 import TokenPage from './pages/TokenPage'
 import PairPage from './pages/PairPage'
@@ -96,7 +96,6 @@ const BLOCK_DIFFERENCE_THRESHOLD = 30
 
 function App() {
   const [savedOpen, setSavedOpen] = useState(false)
-
   const globalData = useGlobalData()
   const globalChartData = useGlobalChartData()
   const [latestBlock, headBlock] = useLatestBlocks()
@@ -118,7 +117,7 @@ function App() {
         Object.keys(globalData).length > 0 &&
         globalChartData &&
         Object.keys(globalChartData).length > 0 ? (
-          <BrowserRouter>
+          <HashRouter>
             <Switch>
               <Route
                 exact
@@ -175,25 +174,25 @@ function App() {
                 }}
               />
 
-              <Route path='/home'>
+              <Route exact strict path='/home'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <GlobalPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path='/tokens'>
+              <Route exact strict path='/tokens'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AllTokensPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path='/pairs'>
+              <Route exact strict path='/pairs'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AllPairsPage />
                 </LayoutWrapper>
               </Route>
 
-              <Route path='/accounts'>
+              <Route exact strict path='/accounts'>
                 <LayoutWrapper savedOpen={savedOpen} setSavedOpen={setSavedOpen}>
                   <AccountLookup />
                 </LayoutWrapper>
@@ -201,7 +200,7 @@ function App() {
 
               <Redirect from='/' to='/home' />
             </Switch>
-          </BrowserRouter>
+          </HashRouter>
         ) : (
           <LocalLoader fill='true' />
         )}
