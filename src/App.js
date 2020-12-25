@@ -199,7 +199,7 @@ function App() {
                 </LayoutWrapper>
               </Route>
 
-              <Redirect to='/home' />
+              <Redirect from='/' to='/home' />
             </Switch>
           </BrowserRouter>
         ) : (
